@@ -1,6 +1,10 @@
 .join {
   background-image: url('../bg.png');
   background-repeat: no-repeat;
+  background-position: center;
+  background-clip: cover;
+  background-size: cover;
+  background-attachment: fixed;
 
   text-align: center;
 
