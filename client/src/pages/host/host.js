@@ -4,7 +4,7 @@ import './host.css';
 class Host extends Component {
     render() {
         return (
-            <div className='container'>
+            <div className='host'>
             <div class="flex-container">
                 <div class="row"> 
                     <div class="flex-item">

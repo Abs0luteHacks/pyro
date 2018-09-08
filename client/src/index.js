@@ -6,15 +6,13 @@ import Landing from './pages/landing/landing';
 import Join from './pages/join/join';
 import Host from './pages/host/host';
 
-
-
 import './index.css';
 
 class App extends React.Component { 
     render() {
         return (
             <div>
-                <Join />
+                <Player />
 
             </div>
         )

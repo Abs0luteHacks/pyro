@@ -5,7 +5,7 @@ import logo from './logo.png'
 class Landing extends Component {
     render() {
         return (
-            <div className='container'>
+            <div className='landing'>
                 <img src={logo} alt="logo" className='logo'/>
                 <div className='tagline'>
                     <h1>Enjoy music together.</h1>

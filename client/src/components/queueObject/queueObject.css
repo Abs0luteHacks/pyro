@@ -1,0 +1,46 @@
+.song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.song .metadata {
+    margin-left: 25px;
+}
+
+.song .album {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+.song .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.song .info .metadata {
+    display: block;
+    flex: 4;
+}
+
+.song .info .metadata h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    color: black;
+    line-height: 0;
+}
+
+.song .info .metadata h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+}
+
+.song .info .heat {
+    flex: 1;
+    display: flex;
+}
+

@@ -1,7 +1,6 @@
-.container {
-    background-image: url('../bg.png');
+.player {
     background-repeat: no-repeat;
-
+    background-image: none;
     text-align: center;
 
     position: fixed;
