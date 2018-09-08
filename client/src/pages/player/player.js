@@ -11,7 +11,7 @@ class Player extends Component {
         return (
             <div className='player'>
                 <MediaController />
-                {/* <div className='queue'>
+                <div className='queue'>
                     <QueueObject />
                     <QueueObject />
                     <QueueObject />
@@ -29,8 +29,8 @@ class Player extends Component {
                     <QueueObject />
                     <QueueObject />
                     <QueueObject />
-                </div> */}
-                
+                </div>
+                <SearchModal />
 
                 <AddButton />
             </div>
