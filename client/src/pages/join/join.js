@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import button from 'react';
+import { Link } from 'react-router-dom';
 import './join.css';
 
 class Join extends Component {
@@ -17,9 +18,9 @@ class Join extends Component {
                 </div>
             </div>
                 <div className='tabBar'>
-                    <button className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
-                        JOIN ROOM
-                    </button>
+                    <div className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
+                        <Link to='/dashboard' style={{textDecoration: 'none', color: 'white'}}>JOIN ROOM</Link>
+                    </div>
                 </div>
             </div>
         )

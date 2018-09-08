@@ -19,3 +19,16 @@
     font-size: 70px;
     color: white;
 }
+
+@media only screen and (max-width: 450px) {
+
+    .circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .circle h1 {
+        font-size: 50px;
+    }
+
+}

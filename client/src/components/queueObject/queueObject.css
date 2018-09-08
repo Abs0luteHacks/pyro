@@ -47,3 +47,40 @@
     font-weight: 700;
     font-size: 20px;
 }
+
+@media only screen and (max-width: 450px) {
+    .song {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .song .album {
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+    }
+    .song .metadata h1 {
+        font-size: 18px;
+    }
+    .song .metadata h2 {
+        font-size: 15px;
+    }
+    .song .heat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        margin-right: 20px;
+        background: transparent;
+        align-self: center;
+    }
+    .song .heat img {
+        width: 30px;
+        height: auto;
+        margin-bottom: -10px;
+    }
+    .song .heat h1 {
+        margin-left: 0;
+        font-size: 15px;
+    }
+}

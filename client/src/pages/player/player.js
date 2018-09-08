@@ -11,10 +11,13 @@ class Player extends Component {
         return (
             <div className='player'>
                 <MediaController />
-                <QueueObject />
-                <QueueObject />
-                <QueueObject />
-                <QueueObject />
+                <div className='queue'>
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                </div>
+                
 
                 <AddButton />
             </div>
