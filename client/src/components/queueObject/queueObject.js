@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import button from 'react';
 import './queueObject.css';
 
 import album from '../mediaControl/album.jpg'
@@ -20,10 +21,10 @@ class QueueObject extends Component {
                     <h2>Drake</h2>
                 </div>
 
-                <div className='heat'>
+                <button className='heat'>
                     <img src={yellowFlame}/>
                     <h1>505</h1>
-                </div>
+                </button>
              
             </div>
         )

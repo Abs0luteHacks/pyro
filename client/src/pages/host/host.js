@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import button from 'react';
 import './host.css';
 
 class Host extends Component {
@@ -17,9 +18,9 @@ class Host extends Component {
                 </div>
             </div>
                 <div className='tabBar'>
-                    <div className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
+                    <button className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
                         JOIN ROOM
-                    </div>
+                    </button>
                 </div>
             </div>
         )

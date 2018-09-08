@@ -49,3 +49,8 @@
     align-self: center;
 }
 
+.playing .info .controls button {
+    background-color: #EF4A30;
+    border: none;
+}
+

@@ -37,6 +37,8 @@
 .song .heat {
     display: flex;
     margin-right: 50px;
+    background-color: white;
+    border: none;
 }
 
 .song .heat h1 {

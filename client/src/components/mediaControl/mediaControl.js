@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import button from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPauseCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+
 
 import { faStepBackward } from '@fortawesome/free-solid-svg-icons'
 import { faStepForward } from '@fortawesome/free-solid-svg-icons'
@@ -22,9 +24,9 @@ class MediaControl extends Component {
                         <h2>Drake</h2>
                     </div>
                     <div className='controls'>
-                        <FontAwesomeIcon icon={faStepBackward} color="white" style={{width: 35, height: 'auto', padding: 5}}/>
-                        <FontAwesomeIcon icon={faPauseCircle} color="white" style={{width: 35, height: 'auto', padding: 5}}/>
-                        <FontAwesomeIcon icon={faStepForward} color="white" style={{width: 35, height: 'auto', padding: 5}}/>
+                        <button><FontAwesomeIcon icon={faStepBackward} color="white" style={{width: 35, height: 'auto', padding: 5}}/></button>
+                        <button><FontAwesomeIcon icon={faPauseCircle} color="white" style={{width: 35, height: 'auto', padding: 5}}/></button>
+                        <button><FontAwesomeIcon icon={faStepForward} color="white" style={{width: 35, height: 'auto', padding: 5}}/></button>
                     </div>  
                 </div>
                 
