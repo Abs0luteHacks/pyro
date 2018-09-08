@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Landing from './pages/landing';
+import Landing from './pages/landing/landing';
 import './index.css';
 
 class App extends React.Component { 
