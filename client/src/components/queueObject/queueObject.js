@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
-import button from 'react';
-import './queueObject.css';
+import React, { Component } from "react";
+import button from "react";
+import "./queueObject.css";
 
-import album from '../mediaControl/album.jpg'
-import yellowFlame from './heat1.png'
-import orangeFlame from './heat2.png'
-import redFlame from './heat3.png'
-
-
+import album from "../mediaControl/album.jpg";
+import yellowFlame from "./heat1.png";
+import orangeFlame from "./heat2.png";
+import redFlame from "./heat3.png";
 
 class QueueObject extends Component {
-    render() {
-        return (
-            <div className='song'>
-                
-                <img src={album} className='album'/>
-                
-                <div className='metadata'>
-                    <h1>God's Plan</h1>
-                    <h2>Drake</h2>
-                </div>
+  constructor(props) {
+    super();
+  }
 
-                <button className='heat'>
-                    <img src={yellowFlame}/>
-                    <h1>505</h1>
-                </button>
-             
-            </div>
-        )
-    }
+  render() {
+    const { thumbnail, title, artist, upvoteCount, makeLit, URL } = this.props;
+    return (
+      <div className="song">
+        <img src={thumbnail} className="album" />
+
+        <div className="metadata">
+          <h1>{title}</h1>
+          <h2>{artist}</h2>
+        </div>
+
+        <button className="heat" onClick={() => makeLit(URL)}>
+          <img src={yellowFlame} />
+          <h1>{upvoteCount}</h1>
+        </button>
+      </div>
+    );
+  }
 }
 
 export default QueueObject;

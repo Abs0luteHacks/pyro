@@ -17,19 +17,19 @@ class Join extends Component {
               </div>
             </div>
           </div>
-        </div>
 
-        <div classNameName="tabBar">
-          <div
-            className="button"
-            style={{ backgroundColor: "#EF4A30", fontWeight: "700" }}
-          >
-            <Link
-              to="/dashboard"
-              style={{ textDecoration: "none", color: "white" }}
+          <div classNameName="tabBar">
+            <div
+              className="button"
+              style={{ backgroundColor: "#EF4A30", fontWeight: "700" }}
             >
-              JOIN ROOM
-            </Link>
+              <Link
+                to="/dashboard"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                JOIN ROOM
+              </Link>
+            </div>
           </div>
         </div>
       </div>
