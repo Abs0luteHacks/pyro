@@ -6,10 +6,9 @@ import './host.css';
 
 class Host extends Component {
     render() {
-        const { classes } = this.props;
 
         return (
-            <div className='container'>
+            <div className='host'>
             <div className="flex-container">
                 <div className="row"> 
                     <div className="flex-item">
@@ -49,9 +48,6 @@ class Host extends Component {
                     <div className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
                         CREATE ROOM
                     </div>
-                    <button className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
-                        JOIN ROOM
-                    </button>
                 </div>
             </div>
         )

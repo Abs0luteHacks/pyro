@@ -7,11 +7,11 @@ class Join extends Component {
     render() {
         return (
             <div className='join'>
-            <div class="flex-container">
-                <div class="row"> 
-                    <div class="flex-item">
+            <div className="flex-container">
+                <div className="row"> 
+                    <div className="flex-item">
                     <div className='subHeading'>
-                            <h1>enter the room name</h1>
+                        <h1>enter the room code</h1>
                     </div>
                     <input placeholder="name"></input>
                     </div>

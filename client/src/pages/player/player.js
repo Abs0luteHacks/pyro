@@ -4,14 +4,14 @@ import './player.css';
 import QueueObject from '../../components/queueObject/queueObject';
 import MediaController from '../../components/mediaControl/mediaControl';
 import AddButton from '../../components/addButton/addButton';
-
+import SearchModal from '../../components/search/search'
 
 class Player extends Component {
     render() {
         return (
             <div className='player'>
                 <MediaController />
-                <div className='queue'>
+                {/* <div className='queue'>
                     <QueueObject />
                     <QueueObject />
                     <QueueObject />
@@ -29,7 +29,7 @@ class Player extends Component {
                     <QueueObject />
                     <QueueObject />
                     <QueueObject />
-                </div>
+                </div> */}
                 
 
                 <AddButton />
