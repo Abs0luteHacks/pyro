@@ -13,7 +13,7 @@ class Join extends Component {
                     <div className='subHeading'>
                         <h1>enter the room code</h1>
                     </div>
-                    <input placeholder="name"></input>
+                    <input placeholder="code"></input>
                     </div>
                 </div>
             </div>

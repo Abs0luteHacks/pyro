@@ -15,7 +15,7 @@ class Host extends Component {
                     <div className='subHeading'>
                             <h1>create a room name</h1>
                     </div>
-                    <input placeholder="name"></input>
+                    <input placeholder="code"></input>
                     </div>
                     <div className="flex-item">
                         <div className='subHeading'>
@@ -25,7 +25,7 @@ class Host extends Component {
                             <option value="hiphop">hiphop</option>
                             <option value="rock">rock</option>
                             <option value="country">country</option>
-                            <option value="edm/dance">EDM/Dance</option>
+                            <option value="edm/dance">edm/dance</option>
                             <option value="any">any</option>
                             </select>
                         </div>
