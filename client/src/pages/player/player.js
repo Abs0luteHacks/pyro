@@ -16,6 +16,19 @@ class Player extends Component {
                     <QueueObject />
                     <QueueObject />
                     <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
+                    <QueueObject />
                 </div>
                 
 
