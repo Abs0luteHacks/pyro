@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Landing from './pages/landing/landing';
+import Player from './pages/player/player';
 import './index.css';
 
 class App extends React.Component { 
     render() {
         return (
             <div>
-                <Landing />
+                <Player />
 
             </div>
         )
