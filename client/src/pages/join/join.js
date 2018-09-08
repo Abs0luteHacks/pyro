@@ -5,26 +5,20 @@ import "./join.css";
 class Join extends Component {
   render() {
     return (
-      <div className="join">
-        <div className="flex-container">
-          <div className="row">
-            <div className="flex-item">
-              <form>
-                <input
-                  type="text"
-                  name="name"
-                  className="question"
-                  id="nme"
-                  required
-                  autocomplete="off"
-                />
-                <label for="nme">
-                  <span>Enter the room code</span>
-                </label>
-              </form>
+      <div>
+        <div className="join">
+          <div className="flex-container">
+            <div className="row">
+              <div className="flex-item">
+                <div className="subHeading">
+                  <h1>enter the room code</h1>
+                </div>
+                <input placeholder="code" />
+              </div>
             </div>
           </div>
         </div>
+
         <div classNameName="tabBar">
           <div
             className="button"

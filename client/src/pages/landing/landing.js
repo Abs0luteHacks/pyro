@@ -13,7 +13,6 @@ class Landing extends Component {
                 <div className='tagline'>
                     <h1>Enjoy music together.</h1>
                 </div>
-
                 <div className='tabBar'>
                     
                     <div className='button' style={{backgroundColor:'#4D4D4D', fontWeight: '500'}}>
