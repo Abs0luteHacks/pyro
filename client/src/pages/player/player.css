@@ -1,7 +1,6 @@
-.container {
-    background-image: url('../bg.png');
+.player {
     background-repeat: no-repeat;
-
+    background-image: none;
     text-align: center;
 
     position: fixed;
@@ -9,7 +8,30 @@
     height: 100%;
     left: 0;
     top: 0;
-    display: flex;
+
+    display: block;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; */
+
+    overflow: scroll;
+
+}
+
+.player .queue {
+    width: 100%;
+    margin-top: 400px;
+    height: fit-content;
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 1;
+    position: static;
+    top: 0;
+    background-color: #ffffff;
+}
+
+@media only screen and (max-width: 450px) {
+    .player .queue {
+        margin-top: 200px;
+    }
 }

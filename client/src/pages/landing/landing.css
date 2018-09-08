@@ -1,6 +1,10 @@
-.container {
+.landing {
     background-image: url('../bg.png');
     background-repeat: no-repeat;
+    background-position: center;
+    background-clip: cover;
+    background-size: cover;
+    background-attachment: fixed;
 
     text-align: center;
 
@@ -34,7 +38,7 @@
     display: flex;
 }
 
-.button {
+.tabBar .button {
     flex-grow: 1;
     padding-left: 50px;
     padding-right: 50px;
@@ -45,5 +49,21 @@
     font-weight: 700;
     font-size: 25px;
     color: white;
+    border: none;
+}
+
+@media only screen and (max-width: 450px) {
+    .logo {
+        width: 60%;
+    }
+    .tagline {
+        text-align: left;
+        line-height: 4rem;
+        margin-right: 50%;
+        margin-left: 10%;
+    }
+    .tabBar .button {
+        font-size: 23px;
+    }
 }
 

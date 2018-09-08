@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import button from 'react';
 import './host.css';
 
 
@@ -48,6 +49,9 @@ class Host extends Component {
                     <div className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
                         CREATE ROOM
                     </div>
+                    <button className='button' style={{backgroundColor:'#EF4A30', fontWeight: '700'}}>
+                        JOIN ROOM
+                    </button>
                 </div>
             </div>
         )

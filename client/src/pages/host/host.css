@@ -1,6 +1,11 @@
-.container {
+.host {
     background-image: url('../bg.png');
     background-repeat: no-repeat;
+    background-position: center;
+    background-clip: cover;
+    background-size: cover;
+    background-attachment: fixed;
+
 
     text-align: center;
 
@@ -74,6 +79,7 @@
     font-weight: 700;
     font-size: 40px;
     color: white;
+    border: none;
 }
 select {
   height: 40px;
