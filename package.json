@@ -1,0 +1,26 @@
+{
+  "name": "pyro",
+  "version": "1.0.0",
+  "description": "An app to allow music collaboration",
+  "main": "server.js",
+  "scripts": {
+    "dev-server": "nodemon server.js",
+    "dev": "concurrently \"nodemon sever.js\" \"npm start --prefix client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abs0luteHacks/pyro.git"
+  },
+  "author": "Abs0luteHacks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abs0luteHacks/pyro/issues"
+  },
+  "homepage": "https://github.com/Abs0luteHacks/pyro#readme",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.13",
+    "nodemon": "^1.18.4"
+  }
+}
