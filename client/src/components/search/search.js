@@ -7,7 +7,7 @@ import './search.css';
 class Search extends Component {
     render() {
         return (
-            <div className='search'>
+            <div className='search' style={{display: this.props.show ? 'none' : 'flex' }}>
               <SearchBar />
               <div className='results'>
                 <SearchResult />

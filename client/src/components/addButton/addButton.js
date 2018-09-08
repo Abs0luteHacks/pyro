@@ -5,7 +5,7 @@ import './addButton.css';
 class AddButton extends Component {
     render() {
         return (
-            <button className='circle'>
+            <button className='circle' onClick={this.props.onClick}>
                 <h1>+</h1>
             </button>
         )
