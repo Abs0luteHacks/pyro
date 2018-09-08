@@ -1,0 +1,20 @@
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #EF4A30;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+.circle h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 70px;
+    color: white;
+}

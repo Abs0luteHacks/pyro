@@ -2,49 +2,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 
 .song .album {
     width: 100px;
     height: 100px;
     border-radius: 15px;
-    flex: 1;
+    margin-left: 50px;
 }
 
-.song .info {
-    display: flex;
-    justify-content: center;
-    flex: 4;
-}
-
-
-.song .info .metadata {
-    display: block;
+.song .metadata {
     text-align: left;
+    flex: 2;
+    margin-left: 20px;
 }
 
-.metadata {
-    flex-direction: 'row';
-    align-self: flex-start;
-    justify-content: flex-start
-}
-
-.song .info .metadata h1 {
+.song .metadata h1 {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 27px;
-    color: black;
     line-height: 0;
 }
 
-.song .info .metadata h2 {
+.song .metadata h2 {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 20px;
-    color: black;
+    line-height: 10px;
 }
 
-.song .info .heat {
+.song .heat {
     display: flex;
+    margin-right: 50px;
 }
 
+.song .heat h1 {
+    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}

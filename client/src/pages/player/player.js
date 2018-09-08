@@ -3,6 +3,8 @@ import './player.css';
 
 import QueueObject from '../../components/queueObject/queueObject';
 import MediaController from '../../components/mediaControl/mediaControl';
+import AddButton from '../../components/addButton/addButton';
+
 
 class Player extends Component {
     render() {
@@ -10,6 +12,11 @@ class Player extends Component {
             <div className='player'>
                 <MediaController />
                 <QueueObject />
+                <QueueObject />
+                <QueueObject />
+                <QueueObject />
+
+                <AddButton />
             </div>
         )
     }
