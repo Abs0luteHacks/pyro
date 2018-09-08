@@ -8,11 +8,10 @@ class Join extends Component {
             <div class="flex-container">
                 <div class="row"> 
                     <div class="flex-item">
-                        <form>
-                            <input type="text" name="name" class="question" id="nme" required autocomplete="off" />
-                            <label for="nme"><span>Enter the room code</span></label>
-                            <textarea name="message" rows="2" class="question" id="msg" required autocomplete="off"></textarea>
-                        </form>
+                    <div className='subHeading'>
+                            <h1>enter the room name</h1>
+                    </div>
+                    <input placeholder="name"></input>
                     </div>
                 </div>
             </div>
