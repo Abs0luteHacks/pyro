@@ -30,6 +30,7 @@
   font-size: 20px;
   color: black;
   line-height: 1rem;
+  margin-right: 10px;
 }
 
 .result .metadata h2 {
@@ -47,4 +48,10 @@
   align-self: flex-start;
 
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+  .result {
+    width: 100%;
+  }
 }

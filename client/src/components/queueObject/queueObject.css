@@ -2,8 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 
@@ -36,16 +34,32 @@
 
 .song .heat {
     display: flex;
-    margin-right: 50px;
+    flex-direction: column;
     background-color: white;
     border: none;
+    margin-right: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.song .heat img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: -4px;
 }
 
 .song .heat h1 {
-    margin-left: 20px;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 20px;
+    color:black;
+    /* background-color: #EF4A30;
+    border-radius: 3px;
+    padding: 5px;
+
+    -webkit-box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.3);
+-moz-box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.3);
+box-shadow: 4px 4px 4px -1px rgba(0,0,0,0.3); */
 }
 
 @media only screen and (max-width: 450px) {

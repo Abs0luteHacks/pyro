@@ -23,3 +23,9 @@
 .searchBar input::placeholder{
   color: #a7a7a7;
 }
+
+@media only screen and (max-width: 450px) {
+  .searchBar input::placeholder{
+    font-size: 20px;
+  }
+}
