@@ -33,11 +33,11 @@ class Player extends Component {
       })
     })
       .then(res => res.json())
-      .then(data =>
+      .then(data => {
         this.setState({
           data
-        })
-      )
+        });
+      })
       .catch(
         this.setState({
           error: true
@@ -46,6 +46,7 @@ class Player extends Component {
   };
 
   makeLit = songURL => {
+    console.log("Pressed");
     fetch("http://localhost:8888/songs/upvote", {
       method: "POST",
       headers: {
@@ -69,6 +70,9 @@ class Player extends Component {
     return !this.state.data || this.state.data.doesnotexist
       ? null
       : this.state.data.songs.map(song => {
+          if (song.songTitle.length > 25) {
+            song.songTitle = song.songTitle.substring(0, 25) + "...";
+          }
           return (
             <QueueObject
               thumbnail={song.songThumbnailURL}
@@ -114,13 +118,60 @@ class Player extends Component {
       });
   };
 
+  currentSongRender = () => {
+    if (!this.state.data) return null;
+
+    if (!this.state.data.currentSong) {
+      this.state.data.currentSong = {
+        artistTitle: "Click the red button bitch",
+        songThumbnailURL: "",
+        songTitle: "Please choose a song",
+        songURL: "",
+        upvoters: []
+      };
+    }
+
+    console.log(this.state.data);
+
+    const { currentSong } = this.state.data;
+
+    const {
+      artistTitle,
+      songThumbnailURL,
+      songTitle,
+      songURL,
+      upvoters
+    } = currentSong;
+
+    return (
+      <MediaController
+        title={songTitle}
+        artist={artistTitle}
+        thumbnail={songThumbnailURL}
+        songID={songURL.split("=")[1]}
+        onSongFinish={this.onSongFinish}
+      />
+    );
+  };
+
+  onSongFinish = () => {
+    fetch("http://localhost:8888/songs/updateSong", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        code: this.props.match.params.id
+      })
+    }).then(this.updateData);
+  };
+
   render() {
     return (
       <div className="player">
-        <MediaController />
+        {this.currentSongRender()}
         <div className="queue">{this.generateSongs()}</div>
         <AddButton onClick={this.showSearch} />
-
         <SearchModal addSong={this.addSong} show={this.state.search} />
       </div>
     );
