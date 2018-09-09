@@ -63,6 +63,35 @@ router.post("/add", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// removes song from room
+router.post("/remove", (req, res) => {
+  const { code, songURL } = req.body;
+
+  db.collection("rooms")
+    .find({ code })
+    .asArray()
+    .then(results => {
+      if (results.length === 0) res.status(404).json({ notfound: "Not found" });
+
+      const result = results[0];
+      let index = -1;
+      result.songs.forEach((song, i) => {
+        if (song.songURL === songURL) index = i;
+      });
+
+      if (index === -1) res.status(404).json({ notfound: "Song not found" });
+      else {
+        results.songs.splice(index, 1);
+      }
+
+      // save
+      db.collection("rooms")
+        .updateOne({ code }, { $set: result })
+        .then(response => res.json(response));
+    })
+    .catch(err => res.status(400).json(err));
+});
+
 // add upvote to song
 router.post("/upvote", (req, res) => {
   const { code, songURL, sessionUUID } = req.body;

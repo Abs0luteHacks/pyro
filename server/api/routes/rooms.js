@@ -29,7 +29,7 @@ router.post("/create", (req, res) => {
             ambiance,
             songs: []
           })
-          .then(id => res.json({ success: "Saved successfully" }))
+          .then(id => res.json({ success: code }))
           .catch(err => res.status(404).json(err));
       } else
         return res.status(404).json({ alreadyexists: "Code already exists" });

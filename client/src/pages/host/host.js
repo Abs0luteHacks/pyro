@@ -4,7 +4,51 @@ import { Link } from "react-router-dom";
 import "./host.css";
 
 class Host extends Component {
+  state = {
+    code: "",
+    genre: "pop",
+    ambiance: "chill",
+    error: ""
+  };
+
+  onType = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  createRoom = () => {
+    const { code, genre, ambiance } = this.state;
+    fetch("http://localhost:8888/rooms/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        code,
+        genre,
+        ambiance
+      })
+    })
+      .then(body => body.json())
+      .then(json => {
+        if (json.alreadyexists) {
+          this.setState({
+            error: "Room code already exists!"
+          });
+        } else {
+          this.props.history.push(`/dashboard/${json.success}`);
+        }
+      })
+      .catch(err => {
+        this.setState({
+          error: "Room code already exists!"
+        });
+      });
+  };
+
   render() {
+    const { code, genre, ambiance } = this.state;
     return (
       <div>
         <div>
@@ -16,12 +60,20 @@ class Host extends Component {
                     <div className="subHeading">
                       <h1>create a room name</h1>
                     </div>
-                    <input placeholder="code" />
+                    <input
+                      name="code"
+                      onChange={this.onType}
+                      value={code}
+                      placeholder="code"
+                    />
+                  </div>
+                  <div className="subHeading">
+                    <h3>{this.state.error}</h3>
                   </div>
                   <div className="flex-item">
                     <div className="subHeading">
                       <h1>genre</h1>
-                      <select>
+                      <select name="genre" onChange={this.onType} value={genre}>
                         <option value="pop">pop</option>
                         <option value="hiphop">hiphop</option>
                         <option value="rock">rock</option>
@@ -33,8 +85,12 @@ class Host extends Component {
                   </div>
                   <div className="flex-item">
                     <div className="subHeading">
-                      <h1>genre</h1>
-                      <select>
+                      <h1>ambiance</h1>
+                      <select
+                        onChange={this.onType}
+                        value={ambiance}
+                        name="ambiance"
+                      >
                         <option value="chill">chill</option>
                         <option value="party">party</option>
                         <option value="workout">workout</option>
@@ -49,6 +105,7 @@ class Host extends Component {
                 <div
                   className="button"
                   style={{ backgroundColor: "#EF4A30", fontWeight: "700" }}
+                  onClick={this.createRoom}
                 >
                   CREATE ROOM
                 </div>
@@ -61,7 +118,7 @@ class Host extends Component {
             className="button"
             style={{ backgroundColor: "#EF4A30", fontWeight: "700" }}
           >
-            <Link to="/dashboard">HOST PARTY</Link>
+            HOST PARTY
           </button>
         </div>
       </div>
