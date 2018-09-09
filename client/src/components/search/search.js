@@ -19,7 +19,7 @@ class Search extends Component {
       query
     });
 
-    fetch("https://calm-dusk-88107.herokuapp.com/songs/search", {
+    fetch("https://salty-earth-27009.herokuapp.com/server/songs/search", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
