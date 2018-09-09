@@ -19,7 +19,7 @@ class Host extends Component {
 
   createRoom = () => {
     const { code, genre, ambiance } = this.state;
-    fetch("http://localhost:8888/rooms/create", {
+    fetch("https://calm-dusk-88107.herokuapp.com/rooms/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

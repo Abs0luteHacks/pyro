@@ -24,7 +24,7 @@ class App extends React.Component {
   };
 
   fetchData() {
-    fetch("http://localhost:8888/rooms/find", {
+    fetch("https://calm-dusk-88107.herokuapp.com/rooms/find", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

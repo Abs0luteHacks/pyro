@@ -23,7 +23,7 @@ class Player extends Component {
   }
 
   updateData = () => {
-    fetch("http://localhost:8888/rooms/find", {
+    fetch("https://calm-dusk-88107.herokuapp.com/rooms/find", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -47,7 +47,7 @@ class Player extends Component {
 
   makeLit = songURL => {
     console.log("Pressed");
-    fetch("http://localhost:8888/songs/upvote", {
+    fetch("https://calm-dusk-88107.herokuapp.com/songs/upvote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -96,7 +96,7 @@ class Player extends Component {
     this.showSearch();
     console.log(song);
 
-    fetch("http://localhost:8888/songs/add", {
+    fetch("https://calm-dusk-88107.herokuapp.com/songs/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -123,7 +123,7 @@ class Player extends Component {
 
     if (!this.state.data.currentSong) {
       this.state.data.currentSong = {
-        artistTitle: "Click the red button bitch",
+        artistTitle: "Click the red button",
         songThumbnailURL: "",
         songTitle: "Please choose a song",
         songURL: "",
@@ -155,7 +155,7 @@ class Player extends Component {
   };
 
   onSongFinish = () => {
-    fetch("http://localhost:8888/songs/updateSong", {
+    fetch("https://calm-dusk-88107.herokuapp.com/songs/updateSong", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

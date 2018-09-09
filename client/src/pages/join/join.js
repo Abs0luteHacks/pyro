@@ -16,7 +16,7 @@ class Join extends Component {
 
   joinRoom = () => {
     const { code } = this.state;
-    fetch("http://localhost:8888/rooms/find", {
+    fetch("https://calm-dusk-88107.herokuapp.com/rooms/find", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -37,7 +37,7 @@ class Join extends Component {
       })
       .catch(err => {
         this.setState({
-          error: "Room code already exists bitch!"
+          error: "Room code already exists!"
         });
       });
   };

@@ -24,7 +24,11 @@ class MediaControl extends Component {
     show: false
   };
   render() {
-    const { title, artist, thumbnail, songID, onSongFinish } = this.props;
+    let { title, artist, thumbnail, songID, onSongFinish } = this.props;
+
+    if (title.length > 25) {
+      title = title.substring(0, 25) + "...";
+    }
 
     const opts = {
       height: "0",
