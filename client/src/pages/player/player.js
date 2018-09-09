@@ -61,7 +61,11 @@ class Player extends Component {
   };
 
   generateSongs = () => {
-    return this.state.data == null
+    if (this.state.data && this.state.data.doesnotexist) {
+      this.props.history.push("/");
+    }
+
+    return !this.state.data || this.state.data.doesnotexist
       ? null
       : this.state.data.songs.map(song => {
           return (
@@ -103,19 +107,17 @@ class Player extends Component {
     })
       .then(body => body.json())
       .then(json => {
+        console.log(json);
         console.log("Song added");
         this.updateData();
       });
   };
 
   render() {
-    console.log(this.props.match.params.id);
-
     return (
       <div className="player">
         <MediaController />
         <div className="queue">{this.generateSongs()}</div>
-
         <AddButton onClick={this.showSearch} />
 
         <SearchModal addSong={this.addSong} show={this.state.search} />

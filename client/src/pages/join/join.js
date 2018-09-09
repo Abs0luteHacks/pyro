@@ -3,6 +3,45 @@ import { Link } from "react-router-dom";
 import "./join.css";
 
 class Join extends Component {
+  state = {
+    code: "",
+    error: ""
+  };
+
+  onType = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  joinRoom = () => {
+    const { code } = this.state;
+    fetch("http://localhost:8888/rooms/find", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        code
+      })
+    })
+      .then(body => body.json())
+      .then(json => {
+        if (json.doesnotexist) {
+          this.setState({
+            error: "The room does not exist!"
+          });
+        } else {
+          this.props.history.push(`/dashboard/${json.code}`);
+        }
+      })
+      .catch(err => {
+        this.setState({
+          error: "Room code already exists bitch!"
+        });
+      });
+  };
+
   render() {
     return (
       <div>
@@ -13,22 +52,26 @@ class Join extends Component {
                 <div className="subHeading">
                   <h1>enter the room code</h1>
                 </div>
-                <input placeholder="code" />
+                <input
+                  placeholder="code"
+                  name="code"
+                  value={this.state.code}
+                  onChange={this.onType}
+                />
+              </div>
+              <div className="subHeading">
+                <h3>{this.state.error}</h3>
               </div>
             </div>
           </div>
 
-          <div classNameName="tabBar">
+          <div className="tabBar">
             <div
               className="button"
               style={{ backgroundColor: "#EF4A30", fontWeight: "700" }}
+              onClick={this.joinRoom}
             >
-              <Link
-                to="/dashboard"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                JOIN ROOM
-              </Link>
+              JOIN ROOM
             </div>
           </div>
         </div>
