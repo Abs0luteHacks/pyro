@@ -13,7 +13,8 @@ class Player extends Component {
     this.state = {
       data: null,
       error: false,
-      search: true
+      search: true,
+      mainSong: {}
     };
   }
 
@@ -110,10 +111,12 @@ class Player extends Component {
 
   render() {
     console.log(this.props.match.params.id);
+    console.log(this.generateSongs());
 
     return (
       <div className="player">
-        <MediaController />
+        <MediaController 
+        />
         <div className="queue">{this.generateSongs()}</div>
 
         <AddButton onClick={this.showSearch} />
