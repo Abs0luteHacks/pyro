@@ -21,6 +21,29 @@ router.post("/search", (req, res) => {
     .then(json => res.json(json));
 });
 
+// update song
+router.post("/updateSong", (req, res) => {
+  const { code } = req.body;
+
+  db.collection("rooms")
+    .find({ code })
+    .asArray()
+    .then(results => {
+      if (results.length === 0) res.status(404).json({ notfound: "Not found" });
+
+      const result = results[0];
+
+      result.currentSong = result.songs[0];
+      result.songs.splice(0, 1);
+
+      // save
+      db.collection("rooms")
+        .updateOne({ code }, { $set: result })
+        .then(response => res.json(response));
+    })
+    .catch(err => res.status(400).json(err));
+});
+
 // add song to room
 router.post("/add", (req, res) => {
   const {
@@ -44,16 +67,29 @@ router.post("/add", (req, res) => {
         if (song.songURL === songURL) exists = true;
       });
 
+      if (result.currentSong && result.currentSong.songURL === songURL)
+        exists = true;
+
       if (exists)
         return res.status(400).json({ alreadyexists: "Song already exists" });
 
-      result.songs.unshift({
-        songURL,
-        songTitle,
-        songThumbnailURL,
-        artistTitle,
-        upvoters: [sessionUUID]
-      });
+      if (result.currentSong === null) {
+        result.currentSong = {
+          songURL,
+          songTitle,
+          songThumbnailURL,
+          artistTitle,
+          upvoters: [sessionUUID]
+        };
+      } else {
+        result.songs.unshift({
+          songURL,
+          songTitle,
+          songThumbnailURL,
+          artistTitle,
+          upvoters: [sessionUUID]
+        });
+      }
 
       // save
       db.collection("rooms")
@@ -106,9 +142,6 @@ router.post("/upvote", (req, res) => {
       let result = results[0];
       result.songs = result.songs.map(song => {
         if (song.songURL === songURL) {
-          if (song.upvoters.indexOf(sessionUUID) >= 0)
-            return res.status(400).json({ alreadyupvoted: "Already upvoted" });
-
           song.upvoters.unshift(sessionUUID);
         }
 

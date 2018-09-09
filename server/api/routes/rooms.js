@@ -27,6 +27,7 @@ router.post("/create", (req, res) => {
             code,
             categories,
             ambiance,
+            currentSong: null,
             songs: []
           })
           .then(id => res.json({ success: code }))
