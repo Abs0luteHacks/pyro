@@ -16,7 +16,7 @@ class Join extends Component {
 
   joinRoom = () => {
     const { code } = this.state;
-    fetch("https://calm-dusk-88107.herokuapp.com/rooms/find", {
+    fetch("https://calm-dusk-88107.herokuapp.com/server/rooms/find", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

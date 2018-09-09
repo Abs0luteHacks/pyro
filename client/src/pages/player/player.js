@@ -23,7 +23,7 @@ class Player extends Component {
   }
 
   updateData = () => {
-    fetch("https://calm-dusk-88107.herokuapp.com/rooms/find", {
+    fetch("https://calm-dusk-88107.herokuapp.com/server/rooms/find", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -47,7 +47,7 @@ class Player extends Component {
 
   makeLit = songURL => {
     console.log("Pressed");
-    fetch("https://calm-dusk-88107.herokuapp.com/songs/upvote", {
+    fetch("https://calm-dusk-88107.herokuapp.com/server/songs/upvote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -96,7 +96,7 @@ class Player extends Component {
     this.showSearch();
     console.log(song);
 
-    fetch("https://calm-dusk-88107.herokuapp.com/songs/add", {
+    fetch("https://calm-dusk-88107.herokuapp.com/server/songs/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -155,7 +155,7 @@ class Player extends Component {
   };
 
   onSongFinish = () => {
-    fetch("https://calm-dusk-88107.herokuapp.com/songs/updateSong", {
+    fetch("https://calm-dusk-88107.herokuapp.com/server/songs/updateSong", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
