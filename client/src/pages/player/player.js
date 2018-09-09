@@ -13,7 +13,8 @@ class Player extends Component {
     this.state = {
       data: null,
       error: false,
-      search: true
+      search: true,
+      mainSong: {}
     };
   }
 
